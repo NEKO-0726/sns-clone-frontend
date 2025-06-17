@@ -5,7 +5,7 @@ import React from "react";
 import { useState } from "react";
 
 // ページ固有のメタデータをここで export
-export const Metadata = {
+export const metadata = {
   title: "新規作成",
 };
 

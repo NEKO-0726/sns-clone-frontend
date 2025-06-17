@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 // ページ固有のメタデータをここで export
-export const Metadata = {
+export const metadata = {
   title: "ログイン",
 };
 
