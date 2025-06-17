@@ -15,8 +15,15 @@ type PageProps = {
   };
 };
 
+export const dynamic = "force-dynamic";
+
 const UserProfilePage = async ({ params }: PageProps) => {
-  const { userId } = params;
+  const { userId } = await params;
+
+  if (!userId) {
+    notFound();
+    return null;
+  }
 
   try {
     const profileResponse = await apiClient.get<Profile>(
