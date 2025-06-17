@@ -5,11 +5,11 @@ import React from "react";
 
 //ユーザープロフィールを表示する。
 
-interface PageProps {
+type PageProps = {
   params: {
     userId: string;
   };
-}
+};
 
 //SSRでユーザープロフィールを取得するための関数
 //userEffectを使うと、クライアントサイドでのレンダリングになってしまうため、SSRで取得する必要がある
