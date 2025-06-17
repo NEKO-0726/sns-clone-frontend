@@ -4,11 +4,6 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import { useState } from "react";
 
-// ページ固有のメタデータをここで export
-export const metadata = {
-  title: "新規作成",
-};
-
 const Signup = () => {
   const [username, setUserName] = useState<string>("");
   const [email, setEmail] = useState<string>("");

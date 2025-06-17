@@ -4,11 +4,6 @@ import apiClient from "@/lib/apiClient";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
-// ページ固有のメタデータをここで export
-export const metadata = {
-  title: "ログイン",
-};
-
 const Login = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
