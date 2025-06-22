@@ -8,23 +8,21 @@ import React from "react";
 //SSRでユーザープロフィールを取得するための関数
 //userEffectを使うと、クライアントサイドでのレンダリングになってしまうため、SSRで取得する必要がある
 
-// 型を別に定義
-type PageProps = {
-  params: {
-    userId: string;
-  };
-};
+// // 型を別に定義
+// type PageProps = {
+//   params: {
+//     userId: string;
+//   };
+// };
 
 export const dynamic = "force-dynamic";
 
-const UserProfilePage = async ({ params }: PageProps) => {
+const UserProfilePage = async ({
+  params,
+}: {
+  params: Promise<{ userId: string }>;
+}) => {
   const { userId } = await params;
-
-  if (!userId) {
-    notFound();
-    return null;
-  }
-
   try {
     const profileResponse = await apiClient.get<Profile>(
       `users/profile/${userId}`
